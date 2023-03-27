@@ -46,7 +46,7 @@ Our target audience is people who deal with sending assets frequently over the P
 ### Team members
 
 - Sergej Sakac [Szegoo](https://github.com/Szegoo)
-- Names of team members
+- Oliver Lim [cuteolaf](https://github.com/cuteolaf)
 
 ### Contact
 
@@ -67,6 +67,7 @@ We will be working as two individuals
 - Member of the [fellowship](https://github.com/polkadot-fellows/seeding/pull/36)
 - Contributor to [rmrk-pallets](https://github.com/rmrk-team/rmrk-substrate/pulls?q=is%3Apr+is%3Aclosed+author%3ASzegoo)
 
+#### [Oliver Lim](https://github.com/cuteolaf)
 
 ### Team Code Repos
 
@@ -76,10 +77,12 @@ We will be working as two individuals
 Please also provide the GitHub accounts of all team members. If they contain no activity, references to projects hosted elsewhere or live are also fine.
 
 - https://github.com/Szegoo
+- https://github.com/cuteolaf
 
 ### Team LinkedIn Profiles (if available)
 
 - http://linkedin.com/in/sergej-sakac-334a47252
+- https://www.linkedin.com/in/oliver-lim-2215a8235/
 
 ## Development Roadmap :nut_and_bolt:
 
