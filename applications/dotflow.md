@@ -68,6 +68,12 @@ We will be working as two individuals
 - Contributor to [rmrk-pallets](https://github.com/rmrk-team/rmrk-substrate/pulls?q=is%3Apr+is%3Aclosed+author%3ASzegoo)
 
 #### [Oliver Lim](https://github.com/cuteolaf)
+- Full stack blockchain developer with 5+ years of experience
+- Quick learner and active contributor to open source projects
+  - [Fair Squares](https://github.com/fair-squares/fair-squares)
+  - [Imbue Network](https://github.com/imbuenetwork)
+  - [Anagolay Network](https://gitlab.com/anagolay/anagolay)
+  - ...
 
 ### Team Code Repos
 
