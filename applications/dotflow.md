@@ -1,6 +1,6 @@
 # Dotflow
 
-- **Team Name:** Sergej Sakac
+- **Team Name:** Sergej Sakac & Oliver Lim
 - **Payment Address:** 0x1e86CD18E4443B5f57b0133077954Cd84896964d (USDC)
 - **[Level](https://github.com/w3f/Grants-Program/tree/master#level_slider-levels):** 2
 
@@ -9,7 +9,7 @@
 ### Overview
 
 #### Problem
-We can most certainly agree that the future is multi-chain. As such, it is not uncommon for users to hold multiple accounts across various chains for reasons such as distinct address formats and security. However, this practice presents a challenge in managing multiple addresses. Adding to the complexity is the need to verify the address of the intended recipient, as it may have changed over time.
+We can most certainly agree that the future is multi-chain. As such, it is not uncommon for users to hold multiple accounts across various chains for reasons such as distinct address formats and security benefits. However, this practice presents a challenge in managing multiple addresses. Adding to the complexity is the need to verify the address of the intended recipient, as it may have changed over time.
 
 In summary, there are two key challenges to address: the management of multiple addresses and making sure the addresses of the recepients did not change in the meantime.
 
@@ -19,18 +19,18 @@ To mitigate these challenges, we aim to simplify the user experience by abstract
 
 Our project will comprise of two smart contracts coded in ink!, and a React.js-based user interface.
 
-The first contract will store users' address-related data in an entity called `Identity`. Each user will have their own `Identity`, which will contain their addresses across different chains. The Identity creators will be responsible for updating their addresses if any changes occur. Every Identity will be assigned a unique `IdentityId`, which will serve a crucial purpose in the second contract.
+The first contract will store users' address-related data in an entity called `Identity`. Each user will have their own `Identity`, which will contain their addresses across different chains. The Identity creators will be responsible for updating their addresses if any changes occur. Every Identity will be assigned a unique `IdentityNo`, which will serve a crucial purpose in the second contract.
 
 Additionally, this contract will feature a function that, based on input arguments, will return the appropriate destination address for fund transfers. This function will mainly be used by the user interface.
 
-The second contract will be an address book that enables users to store the `IdentityId`s of the people they are most frequently engaged with . Each user will have the option to create their own address book, where they can add a nickname to each identity to differentiate them easily.
+The second contract will be an address book that enables users to store the `IdentityNos` of the people they are most frequently engaged with . Each user will have the option to create their own address book, where they can add a nickname to each identity to differentiate them easily.
 
 The UI we are going to build will serve the purpose of interacting with both of our contracts. Users will be able to create an identity and customize the addresses of their identity. Using the UI users will also be able to create their address book and customize it. The most important functionality the UI will provide will be routing.
 When a user wants to transfer some funds to an identity the user will only have to worry about the token, start and destination chain and the identity they want to send the token to. Based on all of this the UI will query the first contract and based on that create a transaction that will route the funds to the proper address.
 
 In case the start and destination chain are not the same, the UI will create an XCM message that will route the funds to the proper blockchain.
 
-Our ink! smart contracts will be deployed on the Astar network,
+Our ink! smart contracts will be deployed on the Astar network.
 
 ### Ecosystem Fit
 
@@ -96,21 +96,21 @@ Please also provide the GitHub accounts of all team members. If they contain no 
 
 - **Total Estimated Duration:** 2,5 months
 - **Full-Time Equivalent (FTE):**  1.5 FTE
-- **Total Costs:** 
+- **Total Costs:** 19,000 USD
 
 ### Milestone 1 Example — Basic functionality
 
 - **Estimated duration:** 1 month
 - **FTE:**  1,5
-- **Costs:** 
+- **Costs:** 8,000
 
 | Number | Deliverable | Specification |
 | -----: | ----------- | ------------- |
 | **0a.** | License | MIT |
-| **0b.** | Documentation | Both contracts and the website code will be well documented and open for everybody to check. The UI will have a simple UI that will be intuitive to use. |
-| **0c.** | Testing and Testing Guide | Both ink! smart contracts will be well tested before deployed. The functionality for generating XCM messages will very well tested to make sure the funds are always transfered to the proper destination. |
+| **0b.** | Documentation | Both contracts and the website code will be well documented and open for everybody to check. The UI will be simple and intuitive to use. |
+| **0c.** | Testing and Testing Guide | Both ink! smart contracts will be well tested before deployed. The functionality for generating XCM messages will very well covered with tests to make sure the funds are always transfered to the proper destination. |
 | **0d.** | Docker | We will provide a Dockerfile that can be used to test all the functionality delivered with this milesone. |
-| 1. | Identity Contract | We will build the Identity contract that was explained above. This includes functionality for creating identities, storing identity information, updating identity information. We will also implement the routing function that will return the destination address based on input arguments. |
+| 1. | Identity Contract | We will build the Identity contract that was explained above. This includes functionality for creating identities, adding addresses to an identity, updating the addresses of an identity. We will also implement the routing function that will return the proper destination address based on input arguments. |
 | 2. | UI for Identity Contract | We will make a UI that will allow users to interact with the Identity Contract. Users will be able to access all of the functionality from the Identity Contract by using this UI |
 
 
@@ -118,7 +118,7 @@ Please also provide the GitHub accounts of all team members. If they contain no 
 
 - **Estimated Duration:** 1,5 month
 - **FTE:**  1,5
-- **Costs:** 
+- **Costs:** 11,000
 
 | Number | Deliverable | Specification |
 | -----: | ----------- | ------------- |
@@ -142,6 +142,7 @@ Our future plan is to expand this and add more specifications based on which the
 - Route tokens based on the sender
 - Route tokens based on the amount
 - Route the tokens based on the token itself
+- Split the transferred amount to multiple addresses
 
 ## Additional Information :heavy_plus_sign:
 
