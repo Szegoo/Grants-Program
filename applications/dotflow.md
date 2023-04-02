@@ -26,11 +26,42 @@ Additionally, this contract will feature a function that, based on input argumen
 The second contract will be an address book that enables users to store the `IdentityNos` of the people they are most frequently engaged with . Each user will have the option to create their own address book, where they can add a nickname to each identity to differentiate them easily.
 
 The UI we are going to build will serve the purpose of interacting with both of our contracts. Users will be able to create an identity and customize the addresses of their identity. Using the UI users will also be able to create their address book and customize it. The most important functionality the UI will provide will be routing.
-When a user wants to transfer some funds to an identity the user will only have to worry about the token, start and destination chain and the identity they want to send the token to. Based on all of this the UI will query the first contract and based on that create a transaction that will route the funds to the proper address.
+When a user wants to transfer some funds to an identity the user will only have to worry about the token, origin and destination chain and the identity they want to send the token to. Based on all of this the UI will query the first contract and based on that create a transaction that will route the funds to the proper address.
 
-In case the start and destination chain are not the same, the UI will create an XCM message that will route the funds to the proper blockchain.
+In case the origin and destination chain are not the same, the UI will create an XCM message that will route the funds to the proper blockchain.
 
 Our ink! smart contracts will be deployed on the Astar network.
+
+### UI Design
+The UI will consist of three main parts:
+
+- My Identity page
+- Transfer page
+- Address book page
+
+#### My Identity page
+![My Identity page](https://i.postimg.cc/288CDys6/1-1-dashboard-1.png)
+
+The user will be able to create his own identity and provide the addresses that he owns on different chains. 
+
+![Add Address](https://i.postimg.cc/jdKdPQS5/1-1-create-identity.png)
+
+In case some of the addresses the user owns change over time he will be able to edit them.
+
+![Edit Address](https://i.postimg.cc/G2w1rdB2/1-1-create-identity-1.png)
+
+#### Transfer page
+![Transfer page](https://i.postimg.cc/DyT3vZRs/2-1-transfer-1.png)
+
+Ther user will be able to transfer funds to an identity by specifying the origin chain, destionation chain, and the receiver's `identityNo`.
+
+#### Address Book page
+![Address book page](https://i.postimg.cc/QtXyT9kK/3-1-Address-book.png)
+
+The user will be able to add identities to his own address book. The identities will be added by providing the `identityNo` and some nickname for the identity.
+ Also by clicking on the transfer icon on one of the identities the user will be redirected to the transfer page where the `identityNo` will be automatically filled out.
+
+![Add identity](https://i.postimg.cc/TwzSg9j3/3-1-Address-book-2.png)
 
 ### Ecosystem Fit
 
@@ -111,7 +142,7 @@ Please also provide the GitHub accounts of all team members. If they contain no 
 | **0c.** | Testing and Testing Guide | Both ink! smart contracts will be well tested before deployed. The functionality for generating XCM messages will very well covered with tests to make sure the funds are always transfered to the proper destination. |
 | **0d.** | Docker | We will provide a Dockerfile that can be used to test all the functionality delivered with this milesone. |
 | 1. | Identity Contract | We will build the Identity contract that was explained above. This includes functionality for creating identities, adding addresses to an identity, updating the addresses of an identity. We will also implement the routing function that will return the proper destination address based on input arguments. |
-| 2. | UI for Identity Contract | We will make a UI that will allow users to interact with the Identity Contract. Users will be able to access all of the functionality from the Identity Contract by using this UI |
+| 2. | My Identity page | We will make a UI that will allow users to interact with the Identity Contract. Users will be able to access all of the functionality from the Identity Contract by using this UI |
 
 
 ### Milestone 2 Example — Additional features
@@ -128,9 +159,9 @@ Please also provide the GitHub accounts of all team members. If they contain no 
 | **0d.** | Docker | We will provide a Dockerfile that can be used to test all the functionality delivered with this milesone. |
 | 0e. | Article | We will publish a Medium article that explains all the things done in the grant. |
 | 1. | Address Book Contract | We will write the code for the address book contract. This will contain the functionality for creating an address book, adding and modifying addresses. |
-| 2. | Routing functionality. | We will write the logic for constructing XCM messages that will route the funds to the proper address. In case the destination chain is same as the start there will just be a simple transaction. The code for this will be stored on the frontend.
-| 3. | UI for Address Book | We will make a UI that will allow users to interact with the Address Book Contract. Users will be able to access all of the functionality from the Address Book contract by using this UI |
-| 4. | UI for sending tokns | We will make a UI that will allow users to send tokens by setting the destination to some `IdentityId`. The UI will abstract everything away and take care of routing. |
+| 2. | Routing functionality. | We will write the logic for constructing XCM messages that will route the funds to the proper address. In case the destination chain is same as the origin there will just be a simple transaction. The code for this will be stored on the frontend.
+| 3. | Address Book page | We will make a UI that will allow users to interact with the Address Book Contract. Users will be able to access all of the functionality from the Address Book contract by using this UI |
+| 4. | Transfer page | We will make a UI that will allow users to send tokens by setting the destination to some `IdentityId`. The UI will abstract everything away and take care of routing. |
 
 
 ## Future Plans
