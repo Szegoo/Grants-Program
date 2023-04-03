@@ -21,14 +21,14 @@ Our project will comprise of two smart contracts coded in ink!, and a React.js-b
 
 The first contract will store users' address-related data in an entity called `Identity`. Each user will have their own `Identity`, which will contain their addresses across different chains. The Identity creators will be responsible for updating their addresses if any changes occur. Every Identity will be assigned a unique `IdentityNo`, which will serve a crucial purpose in the second contract.
 
-Additionally, this contract will feature a function that, based on input arguments, will return the appropriate destination address for fund transfers. This function will mainly be used by the user interface.
+Additionally, this contract will feature a function that, based on input arguments, will return the appropriate destination address for token transfers. This function will mainly be used by the user interface.
 
 The second contract will be an address book that enables users to store the `IdentityNos` of the people they are most frequently engaged with . Each user will have the option to create their own address book, where they can add a nickname to each identity to differentiate them easily.
 
 The UI we are going to build will serve the purpose of interacting with both of our contracts. Users will be able to create an identity and customize the addresses of their identity. Using the UI users will also be able to create their address book and customize it. The most important functionality the UI will provide will be routing.
-When a user wants to transfer some funds to an identity the user will only have to worry about the token, origin and destination chain and the identity they want to send the token to. Based on all of this the UI will query the first contract and based on that create a transaction that will route the funds to the proper address.
+When a user wants to transfer some tokens to an identity the user will only have to worry about the token, origin and destination chain and the identity they want to send the token to. Based on all of this the UI will query the first contract and based on that create a transaction that will route the tokens to the proper address.
 
-In case the origin and destination chain are not the same, the UI will create an XCM message that will route the funds to the proper blockchain.
+In case the origin and destination chain are not the same, the UI will create an XCM message that will route the tokens to the proper blockchain.
 
 Our ink! smart contracts will be deployed on the Astar network.
 
@@ -51,9 +51,9 @@ In case some of the addresses the user owns change over time he will be able to 
 ![Edit Address](https://i.postimg.cc/G2w1rdB2/1-1-create-identity-1.png)
 
 #### Transfer page
-![Transfer page](https://i.postimg.cc/DyT3vZRs/2-1-transfer-1.png)
+[![2-1-transfer-1.png](https://i.postimg.cc/Cx9ZCHpB/2-1-transfer-1.png)](https://postimg.cc/75MYwz6w)
 
-Ther user will be able to transfer funds to an identity by specifying the origin chain, destionation chain, and the receiver's `identityNo`.
+Ther user will be able to transfer tokens to an identity by specifying the origin chain, destionation chain, and the receiver's `identityNo`.
 
 #### Address Book page
 ![Address book page](https://i.postimg.cc/QtXyT9kK/3-1-Address-book.png)
@@ -67,7 +67,7 @@ The user will be able to add identities to his own address book. The identities 
 
 This project fits perfectly with the Polkadot ecosystem because it has everything we need to make it work. Polkadot is a multi-chain network, so a lot of users have different addresses on different chains for the same reasons we mentioned earlier. That's why the problems we talked about are important in this ecosystem.
 
-XCM is going to be a core component of our project since it'll help us transfer funds between the parachains and the relay chain.
+XCM is going to be a core component of our project since it'll help us transfer tokens between the parachains and the relay chain.
 
 #### Target Audience
 Our target audience is people who deal with sending assets frequently over the Polkadot network.
@@ -108,8 +108,10 @@ We will be working as two individuals
 
 ### Team Code Repos
 
-- https://github.com/<your_organisation>/<project_1>
-- https://github.com/<your_organisation>/<project_2>
+We will be working on two separate repos, one for the UI and the other for the ink! contracts.
+
+- https://github.com/TheDotflow/dotflow-ui
+- https://github.com/TheDotflow/dotflow-ink
 
 Please also provide the GitHub accounts of all team members. If they contain no activity, references to projects hosted elsewhere or live are also fine.
 
@@ -138,10 +140,10 @@ Please also provide the GitHub accounts of all team members. If they contain no 
 | Number | Deliverable | Specification |
 | -----: | ----------- | ------------- |
 | **0a.** | License | MIT |
-| **0b.** | Documentation | Both contracts and the website code will be well documented and open for everybody to check. The UI will be simple and intuitive to use. |
-| **0c.** | Testing and Testing Guide | Both ink! smart contracts will be well tested before deployed. The functionality for generating XCM messages will very well covered with tests to make sure the funds are always transfered to the proper destination. |
+| **0b.** | Documentation | Ink! contracts and the UI code will be well documented and open for everybody to take a look. The UI will be simple and intuitive to use. |
+| **0c.** | Testing and Testing Guide | The Identity ink! contract will be well tested with unit and integration tests. |
 | **0d.** | Docker | We will provide a Dockerfile that can be used to test all the functionality delivered with this milesone. |
-| 1. | Identity Contract | We will build the Identity contract that was explained above. This includes functionality for creating identities, adding addresses to an identity, updating the addresses of an identity. We will also implement the routing function that will return the proper destination address based on input arguments. |
+| 1. | Identity Contract | We will write the code for the Identity contract that was explained above. This includes functionality for creating an identity, adding addresses to an identity, updating the addresses of an identity. We will also implement the routing function that will return the proper destination address based on input arguments. |
 | 2. | My Identity page | We will make a UI that will allow users to interact with the Identity Contract. Users will be able to access all of the functionality from the Identity Contract by using this UI |
 
 
@@ -155,20 +157,18 @@ Please also provide the GitHub accounts of all team members. If they contain no 
 | -----: | ----------- | ------------- |
 | **0a.** | License | MIT |
 | **0b.** | Documentation | Both contracts and the website code will be well documented and open for everybody to check. The UI will have a simple UI that will be intuitive to use. |
-| **0c.** | Testing and Testing Guide | Both ink! smart contracts will be well tested before deployed. The functionality for generating XCM messages will very well tested to make sure the funds are always transfered to the proper destination. |
+| **0c.** | Testing and Testing Guide | The Address Book ink! contract will be well tested with unit and integration tests before being deployed to the Astar network. The functionality for generating XCM messages will very well tested to make sure the tokens are always transfered to the proper destination. |
 | **0d.** | Docker | We will provide a Dockerfile that can be used to test all the functionality delivered with this milesone. |
-| 0e. | Article | We will publish a Medium article that explains all the things done in the grant. |
+| 0e. | Article | We will publish a Medium article that explains the details of our project. |
 | 1. | Address Book Contract | We will write the code for the address book contract. This will contain the functionality for creating an address book, adding and modifying addresses. |
-| 2. | Routing functionality. | We will write the logic for constructing XCM messages that will route the funds to the proper address. In case the destination chain is same as the origin there will just be a simple transaction. The code for this will be stored on the frontend.
+| 2. | Routing functionality. | We will write the logic for constructing XCM messages that will route the tokens to the proper address. In case the destination chain is same as the origin there will just be a simple transaction. The code for this will be stored on the frontend.
 | 3. | Address Book page | We will make a UI that will allow users to interact with the Address Book Contract. Users will be able to access all of the functionality from the Address Book contract by using this UI |
-| 4. | Transfer page | We will make a UI that will allow users to send tokens by setting the destination to some `IdentityId`. The UI will abstract everything away and take care of routing. |
+| 4. | Transfer page | We will make a UI that will allow users to send tokens by setting the destination to some `IdentityId`. The UI will abstract addresses away and take care of the routing. |
 
 
 ## Future Plans
 
-For this grant our plan is to make it possible to route tokens based on the destination parachain.
-
-Our future plan is to expand this and add more specifications based on which the tokens can be transfered. Our current ideas are:
+Our future plan is to expand our core functionality and add more features so that the tokens can be routed based on some different criteria. Our current ideas are:
 
 - Route tokens based on the sender
 - Route tokens based on the amount
