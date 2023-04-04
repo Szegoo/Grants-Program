@@ -168,12 +168,12 @@ Please also provide the GitHub accounts of all team members. If they contain no 
 
 ## Future Plans
 
-Our future plan is to expand our core functionality and add more features so that the tokens can be routed based on some different criteria. Our current ideas are:
+Our future plan is to expand our core functionality and add more features so that the tokens can be routed based on some different criteria. Some example of these ideas are: 
 
-- Route tokens based on the sender
-- Route tokens based on the amount
-- Route the tokens based on the token itself
+- Route tokens based on the amount, sender and/or the token itself
 - Split the transferred amount to multiple addresses
+
+An exciting feature we would like to build in the future is enable token transfers between blockchains that are not part of the Polkadot network(e.g. Polkadot<->Ethereum).
 
 ## Additional Information :heavy_plus_sign:
 
