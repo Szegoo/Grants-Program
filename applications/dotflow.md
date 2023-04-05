@@ -86,9 +86,8 @@ Our target audience is people who deal with sending assets frequently over the P
 - **Website:** https://github.com/Szegoo
 
 ### Legal Structure
-We will be working as two individuals
-- **Registered Address:** N/A
-- **Registered Legal Entity:** N/A
+- **Registered Address:** Kanalska 7 Novi Sad Serbia
+- **Registered Legal Entity:** MASTER UNION LLC.
 
 ### Team's experience
 
